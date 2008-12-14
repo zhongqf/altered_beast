@@ -1,5 +1,9 @@
+require 'lewtcloth'
+
 module HtmlFormatting
   protected
+  
+  RedCloth.send(:include, LewtCloth)  
   
   def format_attributes
     self.class.formatted_attributes.each do |attr|
@@ -7,7 +11,7 @@ module HtmlFormatting
       linked = auto_link(raw) { |text| truncate(text, :length => 50) }
       textilized = RedCloth.new(linked, [:hard_breaks])
       textilized.hard_breaks = true if textilized.respond_to?("hard_breaks=")
-      write_attribute "#{attr}_html", white_list_sanitizer.sanitize(textilized.to_html)
+      write_attribute "#{attr}_html", white_list_sanitizer.sanitize(textilized.to_html(:textile, :lewt))
     end
   end
 end
