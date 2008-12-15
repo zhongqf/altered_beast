@@ -76,17 +76,17 @@ module ApplicationHelper
   
   def main_site_name
     @main_site_name ||= main_site ? @main_site.name :
-      "Altered Beast"
+      "Murloc"
   end
 
   def main_site_description
     @main_site_description ||= main_site ? @main_site.description :
-      "<h5>What is Beast?</h5><p>A small, light-weight forum in Rails with a scary name and a goal of around 500 lines of code when we're done.</p>"
+      "<h5>What is Murloc?</h5><p>A small, light-weight forum in Rails with WoW specific features.</p>"
   end
 
   def main_site_tagline
     @main_site_tagline ||= main_site ? @main_site.tagline :
-      "Two's company. Three's a forum. More's a Beast."
+      "Gawurrglbrglgrlgrglgrllgrug!"
   end
 
 end
