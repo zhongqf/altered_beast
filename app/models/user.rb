@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
     { :conditions => ["users.display_name like ? or users.login like ?", 
                         "#{name}%", "#{name}%"] }}
 
+  named_scope :currently_online, lambda { { :conditions => ['last_seen_at >= ?', 10.minutes.ago] } }
+
   def self.prefetch_from(records)
     find(:all, :select => 'distinct *', :conditions => ['id in (?)', records.collect(&:user_id).uniq])
   end
