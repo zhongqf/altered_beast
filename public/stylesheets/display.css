@@ -608,6 +608,13 @@ table.forums .posts
 	font-size:0.8em;
 }
 
+table.forums .moderators
+{	
+  font-family: 'Lucida Grande', Tahoma, Arial, Helvetica, sans-serif;
+	color:#666;
+  font-size: 0.85em;
+}
+
 table tr th.la { 	text-align:left; }
 table tr td.ca { 	text-align:center; }
 table tr td.inv { background:#eee; }
